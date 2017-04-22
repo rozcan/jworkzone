@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Work Entry</span> {{vm.workEntry.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Start Date</span></dt>
+        <dd>
+            <span>{{vm.workEntry.startDate | date:'medium'}}</span>
+        </dd>
+        <dt><span>End Date</span></dt>
+        <dd>
+            <span>{{vm.workEntry.endDate | date:'medium'}}</span>
+        </dd>
+        <dt><span>Unique Id</span></dt>
+        <dd>
+            <span>{{vm.workEntry.uniqueId}}</span>
+        </dd>
+        <dt><span>User</span></dt>
+        <dd>
+            {{vm.workEntry.userId}}
+        </dd>
+        <dt><span>Region</span></dt>
+        <dd>
+            <a ui-sref="region-ctl-detail({id:vm.workEntry.regionId})">{{vm.workEntry.regionId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="work-entry-ctl-detail.edit({id:vm.workEntry.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

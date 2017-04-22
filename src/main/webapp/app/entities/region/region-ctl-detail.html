@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Region</span> {{vm.region.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Region Name</span></dt>
+        <dd>
+            <span>{{vm.region.regionName}}</span>
+        </dd>
+        <dt><span>Uuid</span></dt>
+        <dd>
+            <span>{{vm.region.uuid}}</span>
+        </dd>
+        <dt><span>Major</span></dt>
+        <dd>
+            <span>{{vm.region.major}}</span>
+        </dd>
+        <dt><span>Minor</span></dt>
+        <dd>
+            <span>{{vm.region.minor}}</span>
+        </dd>
+        <dt><span>Location</span></dt>
+        <dd>
+            <a ui-sref="location-ctl-detail({id:vm.region.locationId})">{{vm.region.locationId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="region-ctl-detail.edit({id:vm.region.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>
